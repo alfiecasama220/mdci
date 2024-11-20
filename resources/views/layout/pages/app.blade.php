@@ -23,14 +23,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const editableCells = document.querySelectorAll('[contenteditable="true"]');
-
+            
             function updateCell(cell) {
                 const value = parseFloat(cell.innerText.replace(/[^\d.-]/g, ''));
                     const account_id = cell.getAttribute('data-id');
                     const type = cell.getAttribute('data-type');
                     const field = cell.getAttribute('data-field');
 
-                    
+                    console.log('Debug=:  ' + value);
 
                     fetch('/update-account',  { 
                         method: 'POST',
